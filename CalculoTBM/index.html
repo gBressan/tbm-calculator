@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de TMB</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="css/icons8-levantamento-de-peso-16.png">
+</head>
+
+<body>
+    
+    <div class="imagem-container">
+        <img src="css/viversaudavel.jpg">
+    </div>
+
+    <div class="container"> 
+
+       
+    <div class="variable-container">
+
+        <h1>Calculadora de TMB</h1>
+        
+
+        <form id="tmbForm">
+
+            <label for="genero">Gênero:</label>
+            <select id="genero">
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+            </select>
+            <br>
+
+            <label for="peso">Peso (kg):</label>
+            <input type="number" id="peso" required>
+            <br>
+
+            <label for="altura">Altura (cm):</label>
+            <input type="number" id="altura" required>
+            <br>
+
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" required>
+            <br>
+            <button id="botaoLimpar" class ="botao-limpar">Limpar Campos</button>
+            <br>
+
+        </form>
+            <br>
+            <button type="button" onclick="calculateTMB()">Calcular TMB</button>
+            <br>
+            <h2 id="result"></h2>
+            
+        </div>
+
+            <div class="menu-container">
+                <button class="menu-button" id="sedentario">Sedentário (pouco ou nenhum exercício)</button>
+                <button class="menu-button" id="levementeAtivo">Levemente ativo (exercício leve 1 a 3 dias por semana)</button>
+                <button class="menu-button" id="moderadoAtivo">Moderadamente ativo (exercício moderado 3 a 5 dias por semana)</button>
+                <button class="menu-button" id="muitoAtivo">Muito ativo (exercício pesado 6 a 7 dias por semana)</button>
+                <button class="menu-button" id="extremeAtivo">Extremamente ativo (exercício muito intenso, treinos 2x por dia)</button>
+            </div>
+        
+    </div>
+
+   <script>
+        document.getElementById("botaoLimpar").addEventListener("click", function() {
+            document.getElementById("tmbForm").reset();
+            document.getElementById("result").textContent = "";
+        });
+    </script>
+
+    <script src="js/calculo.js"></script>
+</body>
+</html>
